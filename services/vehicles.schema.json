@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "model": {"type": "string"},
+        "manufacturer": {"type": "string"},
+        "cost_in_credits": {"type": "string"},
+        "length": {"type": "string"},
+        "max_atmosphering_speed": {"type": "string"},
+        "crew": {"type": "string"},
+        "passengers": {"type": "string"},
+        "cargo_capacity": {"type": "string"},
+        "consumables": {"type": "string"},
+        "vehicle_class": {"type": "string"},
+        "created": {"type": "string"},
+        "edited": {"type": "string"},
+        "url": {"type": "string"},
+        "pilots": {"type": "array"},
+        "films": {"type": "array"}
+    },
+    "additionalProperties": true,
+    "required": ["name", "model", "manufacturer", "cost_in_credits", "length", "max_atmosphering_speed", "crew", "passengers", "cargo_capacity", "consumables", "vehicle_class", "created", "edited", "url", "pilots", "films"]
+}

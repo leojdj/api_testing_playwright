@@ -11,13 +11,13 @@ I use the Star Wars API as the "Service Provider" since it is reliable, easy to 
 
 ## Test Check "Patterns"
 
-- Isolated Tests. Endpoints are checked in isolation.
+- **Isolated Tests**. Endpoints are checked in isolation.
     Simplest and most direct way to assert the data of the response and status of a request.
 
-- Sequence of Tests. Various endpoints are checked in sequence, each as its own test.
+- **Sequence of Tests**. Various endpoints are checked in sequence, each as its own test.
     There is a dependency among them so that the output of one can be (part of) the input of the next. This allows us to check for workflows, interactions, and relationships among the services.
 
-- Sequence of API. Each test calls various endpoints to achieve a specific outcome, task, or workflow.
+- **Sequence of API**. Each test calls various endpoints to achieve a specific outcome, task, or workflow.
 
 At the end of the day, the last two can be mixed and help with automating workflows, End to End, interactions, and relationships. It's about "organizing the code", more than anything, and keeping with the model we have built in our mind after testing as we code the checks.
 
@@ -38,3 +38,22 @@ The SWAPI is very simple, I have tried to reflect what each "pattern" can offer 
 ## The API Used
 
 I use the Star Wars API as the "service". SWAPI(info).
+
+# Steps To See It In Action
+
+> [!NOTE]
+> This is not to *fork* or *work* directly on the code as if it were your project.
+
+Requirements: `Node.js` must be installed in your machine.
+
+1. Create a **new** target folder in your machine
+1. Initialize Playwright in that folder `npm init playwright@latest`
+1. **Download** the files from the repo
+1. Copy the files to the folder you prepared (should be ok to overwrite anything default set by Playwright)
+1. Initiate the Playwright execution of the code `npx playwright test`
+1. All tests should pass without any code changes
+
+> [!NOTE]
+> Object printing is commented, as it is mostly useful when debugging. `logUtils.obj()`
+
+Created: 05/01/2026 | Latest Update: 05/01/2026
