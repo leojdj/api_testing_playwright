@@ -1,29 +1,29 @@
-# API Testing with Playwright
+# API Testing with Playwright[^1]
 
 This is demo/sample code for API Testing ideas using Playwright.
 
 It is partially a complement to a Tech Talk I gave on the topic on April 2026. The main goal is to present a way to organize the code, use a Service Object, and offer three common ways in which automated checks can be done with API.
 
-I use the Star Wars API as the "Service Provider" since it is reliable, easy to use and understand, and requires no key. Obviously, these are all read-only endpoints.
+I use the **Star Wars API** as the 'Service Provider' since it is reliable, easy to use and understand, and requires no key. Obviously, these are all read-only endpoints.
 
 > [!NOTE]
 > In many places, the code could be simplified, squashed, or expressed in a single line. I kept it "verbose" for clarity.
 
-## Test Check "Patterns"
+## Test Check 'Patterns'
 
 - **Isolated Tests**. Endpoints are checked in isolation.
-    Simplest and most direct way to assert the data of the response and status of a request.
+    Simplest and most direct way to assert the data of the response and the status/message of a request.
 
 - **Sequence of Tests**. Various endpoints are checked in sequence, each as its own test.
     There is a dependency among them so that the output of one can be (part of) the input of the next. This allows us to check for workflows, interactions, and relationships among the services.
 
 - **Sequence of API**. Each test calls various endpoints to achieve a specific outcome, task, or workflow.
 
-At the end of the day, the last two can be mixed and help with automating workflows, End to End, interactions, and relationships. It's about "organizing the code", more than anything, and keeping with the model we have built in our mind after testing as we code the checks.
+At the end of the day, the last two can be mixed and help with automating workflows, End to End, interactions, and relationships. It's about 'organizing the code', more than anything, and keeping with the model we have built in our mind after testing as we code the checks.
 
-In my most recent product/project I have used the last two the most, usually in combination. A Sequence of Tests that themselves can contain a Sequence of API. This way the asserts can check more than just returned data, but (some of) the business logic that the workflows are creating.
+In my most recent product/project I have used the last two the most, usually in combination. A *Sequence of Tests* that themselves can contain a *Sequence of API*. This way the asserts can check more than just returned data, but (some of) the business logic that the workflows are considering.
 
-The SWAPI is very simple, I have tried to reflect what each "pattern" can offer in the best possible way.
+The SWAPI is very simple, I have tried to reflect what each 'API test pattern' can offer in the best possible way.
 
 > [!NOTE]
 > These are ideas I have used on how to go about API Testing. If nothing else, they can be a source of inspiration, or a first step to see if they also work with your services.
@@ -31,8 +31,8 @@ The SWAPI is very simple, I have tried to reflect what each "pattern" can offer 
 ## Notes
 
 - I have left most of the standard structure from Playwright untouched, since it is good enough for the purposes of this sample code.
-- The SwapiService class becomes the Service Object used in the test files. Here I keep state, useful data, and the endpoint processing methods.
-- The ApiUtils class has a generic JSON Schema check method that I use for an assert.
+- The SwapiService class becomes the *Service Object* used in the test files. In it I keep state, useful data, and the endpoint processing methods.
+- The ApiUtils class has a generic JSON Schema check method that I use for the asserts.
 - The LogUtils class is a first idea to create a single point where to handle useful messaging to the console for debugging, or communication purposes.
 
 ## The API Used
@@ -48,12 +48,17 @@ Requirements: `Node.js` must be installed in your machine.
 
 1. Create a **new** target folder in your machine
 1. Initialize Playwright in that folder `npm init playwright@latest`
+    - Language: JavaScript
+    - Test Folder: tests
+    - Github Actions: false
+    - Playwright Browsers: false
 1. **Download** the files from the repo
-1. Copy the files to the folder you prepared (should be ok to overwrite anything default set by Playwright)
-1. Initiate the Playwright execution of the code `npx playwright test`
+1. Copy the files to the **new** folder you prepared (it is ok to overwrite anything default set by Playwright)
+1. Install the AJV package `npm install ajv -D`
+1. Initiate the Playwright execution of the tests `npx playwright test`
 1. All tests should pass without any code changes
 
 > [!NOTE]
 > Object printing is commented, as it is mostly useful when debugging. `logUtils.obj()`
 
-Created: 05/01/2026 | Latest Update: 05/01/2026
+[^1]: Created: 05/01/2026 | Latest Update: 05/04/2026
