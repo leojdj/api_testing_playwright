@@ -61,4 +61,4 @@ Requirements: `Node.js` must be installed in your machine.
 > [!NOTE]
 > Object printing is commented, as it is mostly useful when debugging. `logUtils.obj()`
 
-[^1] Created: 05/01/2026 | Latest Update: 05/04/2026
+[^1]: Created: 05/01/2026 | Latest Update: 05/04/2026
