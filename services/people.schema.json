@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "height": {"type": "string"},
+        "mass": {"type": "string"},
+        "hair_color": {"type": "string"},
+        "eye_color": {"type": "string"},
+        "birth_year": {"type": "string"},
+        "gender": {"type": "string"},
+        "homeworld": {"type": "string"},
+        "created": {"type": "string"},
+        "edited": {"type": "string"},
+        "url": {"type": "string"},
+        "films": {"type": "array"},
+        "species": {"type": "array"},
+        "vehicles": {"type": "array"},
+        "starships": {"type": "array"}
+    },
+    "additionalProperties": true,
+    "required": ["name", "height", "mass", "hair_color", "eye_color", "birth_year", "gender", "homeworld", "created", "edited", "url", "films", "species", "vehicles", "starships"]
+}

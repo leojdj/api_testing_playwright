@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "rotation_period": {"type": "string"},
+        "orbital_period": {"type": "string"},
+        "diameter": {"type": "string"},
+        "climate": {"type": "string"},
+        "gravity": {"type": "string"},
+        "terrain": {"type": "string"},
+        "surface_water": {"type": "string"},
+        "population": {"type": "string"},
+        "created": {"type": "string"},
+        "edited": {"type": "string"},
+        "url": {"type": "string"},
+        "films": {"type": "array"},
+        "residents": {"type": "array"}
+    },
+    "additionalProperties": true,
+    "required": ["name", "rotation_period", "orbital_period", "diameter", "climate", "gravity", "terrain", "surface_water", "population", "created", "edited", "url", "films", "residents"]
+}
